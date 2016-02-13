@@ -954,6 +954,12 @@ public:
      */
     std::string const & get_response_header(std::string const & key) const;
 
+    /// Retrieve the response status code
+    /**
+     * @return The value of the response status code.
+     */
+    http::status_code::value get_status() const;
+
     /// Set response status code and message
     /**
      * Sets the response status code to `code` and looks up the corresponding
