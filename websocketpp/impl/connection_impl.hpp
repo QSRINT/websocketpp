@@ -540,6 +540,11 @@ connection<config>::get_response_header(std::string const & key) const {
 }
 
 template <typename config>
+http::status_code::value connection<config>::get_status() const {
+    return m_response.get_status_code();
+}
+
+template <typename config>
 void connection<config>::set_status(http::status_code::value code)
 {
     if (m_internal_state != istate::PROCESS_HTTP_REQUEST) {
